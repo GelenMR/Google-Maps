@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="Name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea rows="3" matInput placeholder="Dirección" formControlName="Address"></textarea>
+    </mat-form-field>
+
+    <button (click)="updateMarker()" mat-raised-button color="primary">Actualizar</button>
+    <button (click)="onNoClick()" mat-raised-button color="warn">Cancelar</button>
+</form>
