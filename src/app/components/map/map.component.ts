@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Marker } from '../../class/marker.class';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MapEditComponent } from '../map-edit/map-edit.component';
 
@@ -32,8 +32,8 @@ export class MapComponent implements OnInit {
 
   addMarker(event) {
     console.log(event);
-    const coords: { lat: number, lng: number } = event.coords;
-    const newMarker = new Marker(coords.lat, coords.lng);
+    const coord: { lat: number, lng: number } = event.coords;
+    const newMarker = new Marker(coord.lat, coord.lng);
     this.markers.push( newMarker );
     this.storeMarker();
     this.snackBar.open('Marcador Agregado!', 'CERRAR', { duration: 3000 });
@@ -56,7 +56,14 @@ export class MapComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
+      if (!result) {
+        return;
+      }
+      marker.Name = result.Name;
+      marker.Address = result.Address;
+
+      this.storeMarker();
+      this.snackBar.open('Marcador Actualizado!', 'CERRAR', { duration: 3000 });
     });
   }
 }

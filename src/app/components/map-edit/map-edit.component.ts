@@ -28,7 +28,7 @@ export class MapEditComponent implements OnInit {
 
   updateMarker() {
     console.log('update!');
-
+    this.dialogRef.close(this.form.value);
   }
 
   onNoClick(): void {
