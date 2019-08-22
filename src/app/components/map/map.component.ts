@@ -13,6 +13,8 @@ export class MapComponent implements OnInit {
 
   public markers: Marker[] = [];
 
+  favorite: {};
+
   // tslint:disable-next-line: no-inferrable-types
   lat: number = 19.4978; lng: number = -99.1269;
 
@@ -33,7 +35,7 @@ export class MapComponent implements OnInit {
   addMarker(event) {
     console.log(event);
     const coord: { lat: number, lng: number } = event.coords;
-    const newMarker = new Marker(coord.lat, coord.lng);
+    const newMarker = new Marker({ Name: 'nombre', Address: 'address', Coordinates: coord });
     this.markers.push( newMarker );
     this.storeMarker();
     this.snackBar.open('Marcador Agregado!', 'CERRAR', { duration: 3000 });
