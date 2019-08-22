@@ -1,7 +1,5 @@
-// import { Coords } from 'src/app/class/coordinates.class';
 
 export class Marker {
-  // public Coordinates: Coords[];
   public lat: number;
   public lng: number;
   // tslint:disable-next-line: no-inferrable-types
@@ -13,9 +11,4 @@ export class Marker {
     this.lat = lat;
     this.lng = lng;
   }
-  // constructor( Coordinates: Coords[]) {
-  //   this.Coordinates = Coordinates;
-  //   this.Name = Name;
-  //   this.Address = Address;
-  // }
 }
