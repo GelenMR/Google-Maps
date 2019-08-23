@@ -1,10 +1,6 @@
-// import { Markers } from './marker-model';
-
-// export const markersPoints: Markers[] = [
-
 import { Marker } from 'src/app/class/marker.class';
 
-export const StoreDirestory: Marker[] = [
+export const StoreDirectory: any = [
   {
     Name: 'Red Barn Stores 3858-CUAJIMALPA',
     Address: 'JOSE MA. CASTORENA NO. 84  COL. SAN JOSE DE LOS CEDROS, DELEGACION CUAJIMALPA   MEXICO D.F. C.P. 05210',
